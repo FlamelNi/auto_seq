@@ -47,6 +47,18 @@ return
     return
 }
 
+!v::
+{
+    global loc
+    global loc_size
+    x := 0
+    y := 0
+    MouseGetPos &x, &y
+    loc.push([x, y, 2])
+    loc_size++
+    return
+}
+
 !g::
 {
     global loc
@@ -65,6 +77,10 @@ return
         if loc[i][3] == 1
         {
             Click
+        }
+        if loc[i][3] == 2
+        {
+            Click "Right"
         }
         Sleep 100
         i++
